@@ -1,0 +1,33 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      - echo "Installing dependencies..."
+      - echo "Current Dir is " $PWD
+      - cd doordash_delivery_data
+      - pip install -r requirements.txt -t python
+      - ls -ltr $PWD/*
+  build:
+    commands:
+      - echo "Zipping deployment package..."
+      - echo "Current Dir is " $PWD
+      - zip -r9 python.zip python
+      - ls -ltr $PWD/*
+      - echo "Current Dir is " $PWD
+      - zip -r9 deployment_package.zip lambda_function.py
+
+  post_build:
+    commands:
+      - echo "Updating Lambda function ..."
+      - echo "Current Dir is " $PWD
+      - ls -ltr $PWD/*
+      - aws lambda publish-layer-version --layer-name pandas-layer-for-lambda --description "Pandas layer" --zip-file fileb://python.zip --compatible-runtimes python3.12 python3.11 --compatible-architectures "arm64" "x86_64"
+      - layerARN=$(aws lambda list-layer-versions --layer-name pandas-layer-for-lambda --query 'LayerVersions[0].LayerVersionArn')
+      - echo "Layer Name is ${layerARN}"
+      - layerARN=`echo ${layerARN} | sed "s/\"//g"`
+      - createFunction=$(echo "aws lambda create-function --function-name doordash_data_processing --runtime python3.12 --handler lambda_function.lambda_handler --role arn:aws:iam::120582745863:role/doordashManagedRole --zip-file fileb://deployment_package.zip --layers=${layerARN}")
+      - echo "Create function is --->" ${createFunction}
+      - ${createFunction}
+      - echo "Deployment complete!"
