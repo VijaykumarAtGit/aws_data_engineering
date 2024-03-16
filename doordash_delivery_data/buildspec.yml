@@ -16,7 +16,10 @@ phases:
       - zip -r9 python.zip python
       - ls -ltr $PWD/*
       - echo "Current Dir is " $PWD
-      - zip -r9 deployment_package.zip lambda_function/lambda_function.py
+      - cd lambda_function
+      - zip -r9 deployment_package.zip lambda_function.py
+      - cd ..
+      -
 
   post_build:
     commands:
@@ -27,8 +30,8 @@ phases:
       - layerARN=$(aws lambda list-layer-versions --layer-name pandas-layer-for-lambda --query 'LayerVersions[0].LayerVersionArn')
       - echo "Layer Name is ${layerARN}"
       - layerARN=`echo ${layerARN} | sed "s/\"//g"`
-      - createFunction=$(echo "aws lambda create-function --function-name doordash_data_processing --runtime python3.12 --handler lambda_function.lambda_handler --role arn:aws:iam::120582745863:role/doordashManagedRole --zip-file fileb://deployment_package.zip --layers=${layerARN}")
+      - createFunction=$(echo "aws lambda create-function --function-name doordash_data_processing --runtime python3.12 --handler lambda_function.lambda_handler --role arn:aws:iam::120582745863:role/doordashManagedRole --zip-file fileb://lambda_function/deployment_package.zip --layers=${layerARN}")
       - echo "Create function is --->" ${createFunction}
       - ${createFunction}
       - echo "Deployment complete!"
-      - 
+      -
