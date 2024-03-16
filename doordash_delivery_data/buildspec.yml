@@ -31,3 +31,4 @@ phases:
       - echo "Create function is --->" ${createFunction}
       - ${createFunction}
       - echo "Deployment complete!"
+      - 
