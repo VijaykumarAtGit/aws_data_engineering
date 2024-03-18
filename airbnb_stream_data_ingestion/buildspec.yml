@@ -43,6 +43,6 @@ phases:
       - createFunction=$(echo "aws lambda update-function-code --function-name ProduceAirbnbBookingData --runtime python3.12 --handler lambda_function.lambda_handler --zip-file fileb://ProcessFilteredBookings/ProduceAirbnbBookingData.zip --layers=${layerARN}")
       - echo "Create function is --->" ${createFunction}
       - ${createFunction}
-      -
+      
       - echo "Deployment complete!"
       -
