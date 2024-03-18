@@ -40,6 +40,7 @@ phases:
 #      - createFunction=$(echo "aws lambda create-function --function-name ProcessFilteredBookings --runtime python3.12 --handler lambda_function.lambda_handler --role arn:aws:iam::120582745863:role/airAnbManagedRole--zip-file fileb://ProcessFilteredBookings/ProcessFilteredBookings.zip --layers=${layerARN}")
       - createFunction=$(echo "aws lambda update-function-code --function-name ProcessFilteredBookings  --zip-file fileb://ProcessFilteredBookings/ProcessFilteredBookings.zip")
       - echo "Create function is --->" ${createFunction}
+
       - ${createFunction}
 
       - createFunction=$(echo "aws lambda create-function --function-name ProduceAirbnbBookingData --runtime python3.12 --handler lambda_function.lambda_handler --role arn:aws:iam::120582745863:role/airAnbManagedRole --zip-file fileb://ProduceAirbnbBookingData/ProduceAirbnbBookingData.zip --layers=${layerARN}")
