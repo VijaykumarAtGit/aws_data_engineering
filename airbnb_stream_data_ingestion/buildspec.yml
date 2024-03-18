@@ -32,13 +32,13 @@ phases:
       - layerARN=$(aws lambda list-layer-versions --layer-name ProduceAirbnbBookingDataLayer --query 'LayerVersions[0].LayerVersionArn')
       - echo "Layer Name is ${layerARN}"
       - layerARN=`echo ${layerARN} | sed "s/\"//g"`
-      - createFunction=$(echo "aws lambda update-function-code --function-name filterAirbnbBookingRecords --zip-file fileb://filterAirbnbBookingRecords/filterAirbnbBookingRecords.zip ")
+      - createFunction=$(echo "aws lambda update-function-code --function-name filterAirbnbBookingRecords --zip-file fileb://filterAirbnbBookingRecords/filterAirbnbBookingRecords.zip")
 #     - createFunction=$(echo "aws lambda create-function --function-name filterAirbnbBookingRecords --runtime python3.12 --handler lambda_function.lambda_handler --role arn:aws:iam::120582745863:role/airAnbManagedRole--zip-file fileb://filterAirbnbBookingRecords/filterAirbnbBookingRecords.zip --layers=${layerARN}")
       - echo "Create function is --->" ${createFunction}
       - ${createFunction}
 
 #      - createFunction=$(echo "aws lambda create-function --function-name ProcessFilteredBookings --runtime python3.12 --handler lambda_function.lambda_handler --role arn:aws:iam::120582745863:role/airAnbManagedRole--zip-file fileb://ProcessFilteredBookings/ProcessFilteredBookings.zip --layers=${layerARN}")
-      - createFunction=$(echo "aws lambda update-function-code --function-name ProcessFilteredBookings  --zip-file fileb://ProcessFilteredBookings/ProcessFilteredBookings.zip)
+      - createFunction=$(echo "aws lambda update-function-code --function-name ProcessFilteredBookings  --zip-file fileb://ProcessFilteredBookings/ProcessFilteredBookings.zip")
       - echo "Create function is --->" ${createFunction}
       - ${createFunction}
 
