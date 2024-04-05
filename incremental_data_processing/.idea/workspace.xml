@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b01bc157-6811-4ca5-bcb9-842fddf6472e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../airflow_to_kickoff_emr_job/procecss_s3_file.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../customer_debit_card_purchase_aggregation/generate_mock_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../e_commerce_data_pipeline/dummyRecords.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../e_commerce_data_pipeline/load_redshift_dims.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../e_commerce_data_pipeline/put_transactions_file_in_s3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../e_commerce_data_pipeline/synthetic_data_creator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../e_commerce_data_pipeline/transactional_mock_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate_dummy_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lambda_function.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doordash_delivery_data/buildspec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../doordash_delivery_data/buildspec.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2efcnfFvQ7Wv0FbJF0LTvMQxooE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "airbnb__stream__data__ingestion",
+    "last_opened_file_path": "C:/Users/Admin/Documents/study/GitHub/aws_data_engineering"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-d68999036c7f-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.14475.56" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b01bc157-6811-4ca5-bcb9-842fddf6472e" name="Changes" comment="" />
+      <created>1712299240372</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712299240372</updated>
+    </task>
+    <servers />
+  </component>
+</project>
